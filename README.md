@@ -8,14 +8,9 @@ front end project with HTML, SASS, JS, JSON, Angular.
 * LiveReload: Watch for changes and auto reload on server
 
 ### Get ready
-####First clone or download this repo
+####First clone this repo
 ```
-https://github.com/elationbase/ultimages.git
-```
-#### Open your terminal app and access the workflow folder
-i.e.
-```
-cd /Users/YOUR_NAME/Downloads/ultimages-master
+https://github.com/elationbase/resume.git
 ```
 
 ### Install Project
