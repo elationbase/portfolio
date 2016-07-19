@@ -12,6 +12,10 @@ h1, h2, h3, h4, h5, h6 {
   //font-weight: 100;
 }
 
+img {
+  max-width: 100%;
+}
+
 a {
   color: $lightBlue;
   text-decoration: none;
@@ -25,7 +29,7 @@ a {
   }
 }
 
-.wrapper {
+.container {
   @include j-cf();
   width: 100%;
   margin: 0 auto;
@@ -51,7 +55,7 @@ a {
   font-size: 10px;
 }
 .hero {
-  @include backImage('../img/bg-hero-1.jpg');
+  @include backImage('../img/bg-hero-2.jpg');
   header {
     position: absolute;
     left: 80px;
@@ -59,7 +63,7 @@ a {
     z-index: 2;
     user-select: none;
     font-weight: 800;
-    letter-spacing: -2px;
+    letter-spacing: -4px;
     h1 {
       font-size: 6.0em;
       color: $lightBlue;
@@ -82,4 +86,6 @@ a {
   bottom: 0;
   left: 0;
   z-index: 1;
+  background: rgba(33, 134, 165, 0.2);
+  background: radial-gradient(ellipse at center, rgba(255,255,255,0) 50%,$dark 100%);
 }

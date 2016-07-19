@@ -69,6 +69,10 @@ body {
   min-width: 400px;
 }
 
+img {
+  max-width: 100%;
+}
+
 a {
   color: #26b4c5;
   text-decoration: none;
@@ -84,42 +88,42 @@ a:active {
   color: #26b4c5;
 }
 
-.wrapper {
+.container {
   *zoom: 1;
   width: 100%;
   margin: 0 auto;
   position: relative;
 }
 
-.wrapper:before, .wrapper:after {
+.container:before, .container:after {
   content: '';
   display: table;
 }
 
-.wrapper:after {
+.container:after {
   clear: both;
 }
 
 @media only screen and (max-width: 767px) {
-  .wrapper {
+  .container {
     padding: 0 20px;
   }
 }
 
 @media only screen and (min-width: 769px) and (max-width: 1024px) {
-  .wrapper {
+  .container {
     padding: 0 40px;
   }
 }
 
 @media only screen and (min-width: 1025px) and (max-width: 1280px) {
-  .wrapper {
+  .container {
     padding: 0 70px;
   }
 }
 
 @media only screen and (min-width: 1281px) {
-  .wrapper {
+  .container {
     padding: 0 100px;
   }
 }
@@ -131,7 +135,7 @@ a:active {
 }
 
 .hero {
-  background: url("../img/bg-hero-1.jpg") no-repeat 50% 20%;
+  background: url("../img/bg-hero-2.jpg") no-repeat 50% 20%;
   background-size: cover;
   transition: all 0.3s ease-out;
 }
@@ -146,7 +150,7 @@ a:active {
       -ms-user-select: none;
           user-select: none;
   font-weight: 800;
-  letter-spacing: -2px;
+  letter-spacing: -4px;
 }
 
 .hero header h1 {
@@ -173,6 +177,8 @@ a:active {
   bottom: 0;
   left: 0;
   z-index: 1;
+  background: rgba(33, 134, 165, 0.2);
+  background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0) 50%, #2c3e50 100%);
 }
 
 .main-footer {
@@ -186,4 +192,138 @@ a:active {
 .main-footer img {
   max-width: 140px;
   margin-bottom: 10px;
+}
+
+.hero {
+  background: url("../img/bg-hero-2.jpg") no-repeat 50% 20%;
+  background-size: cover;
+  transition: all 0.3s ease-out;
+}
+
+.hero header {
+  position: absolute;
+  left: 80px;
+  bottom: 80px;
+  z-index: 2;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  font-weight: 800;
+  letter-spacing: -4px;
+}
+
+.hero header h1 {
+  font-size: 6.0em;
+  color: #26b4c5;
+}
+
+.hero header h2 {
+  font-size: 5.0em;
+}
+
+.hero header h2 span {
+  color: #e64f25;
+}
+
+.hero header h3 {
+  font-size: 5.0em;
+}
+
+#js-lines {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  background: rgba(33, 134, 165, 0.2);
+  background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.2) 50%, #2c3e50 100%);
+}
+
+.intro {
+  text-align: center;
+}
+
+.intro h1 {
+  margin: 100px 0 40px 0;
+  font-size: 4.0em;
+}
+
+.intro p {
+  font-size: 2.4em;
+  line-height: 1.6;
+}
+
+.intro ul {
+  margin-top: 100px;
+}
+
+.intro ul > li {
+  float: left;
+  clear: none;
+  width: 25%;
+  margin-left: 0;
+  margin-right: 0;
+  padding: 0 20px;
+}
+
+.intro ul > li h2 {
+  font-size: 3.0em;
+  color: #26b4c5;
+}
+
+.intro ol {
+  font-size: 1.8em;
+  line-height: 1.6;
+  margin-top: 20px;
+}
+
+.strategy {
+  background: url("../img/bg-hero-1.jpg") no-repeat 50% 20%;
+  background-size: cover;
+  transition: all 0.3s ease-out;
+}
+
+.strategy header h2 {
+  font-size: 5.0em;
+  height: 50%;
+  margin-left: 50%;
+}
+
+.strategy ul {
+  height: 50%;
+  margin-left: 50%;
+}
+
+.strategy ul li h3 {
+  font-size: 2.6em;
+  color: #26b4c5;
+}
+
+.strategy ul li p {
+  font-size: 2.0em;
+  color: #F1F1F1;
+}
+
+.portfolio {
+  max-width: 1300px;
+}
+
+.portfolio header h2 {
+  font-size: 5.0em;
+  height: 50%;
+  margin-left: 50%;
+}
+
+.portfolio .col {
+  float: left;
+  clear: none;
+  width: 33.33333%;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.portfolio .col img {
+  padding: 10px;
 }

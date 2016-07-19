@@ -1,0 +1,19 @@
+// _portfolio.scss
+// ==============
+
+.portfolio {
+  max-width: 1300px;
+  header {
+    h2 {
+      font-size: 5.0em;
+      height: 50%;
+      margin-left: 50%;
+    }
+  }
+  .col {
+    @include j-span(1/3);
+    img {
+      padding: 10px;
+    }
+  }
+}
