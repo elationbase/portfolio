@@ -1,0 +1,27 @@
+// _strategy.scss
+// ==============
+
+.strategy {
+  @include backImage('../img/bg-hero-1.jpg');
+  header {
+    h2 {
+      font-size: 5.0em;
+      height: 50%;
+      margin-left: 50%;
+    }
+  }
+  ul {
+    height: 50%;
+    margin-left: 50%;
+    li {
+      h3 {
+        font-size: 2.6em;
+        color: $lightBlue;
+      }
+      p {
+        font-size: 2.0em;
+        color: $light;
+      }
+    }
+  }
+}

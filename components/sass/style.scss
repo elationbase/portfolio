@@ -10,8 +10,6 @@
 @import "reset";
 
 //Fonts partials
-@import "elationbase";
-@import "ultimages";
 
 //Core partials
 @import "base";
@@ -21,8 +19,10 @@
 @import "footer";
 
 // Views partials
-@import "list";
-@import "user";
+@import "hero";
+@import "intro";
+@import "strategy";
+@import "portfolio";
+
 
 // Modules partials
-@import "modal";

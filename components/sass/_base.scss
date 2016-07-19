@@ -4,16 +4,20 @@ body {
   font-family: $bodyFont;
   font-weight: 100;
   font-size: 10px;
-  background: $dark;
-  color: $light;
+  background: $light;
+  color: $dark;
   min-width: 400px;
 }
 h1, h2, h3, h4, h5, h6 {
-  font-weight: 100;
+  //font-weight: 100;
+}
+
+img {
+  max-width: 100%;
 }
 
 a {
-  color: $green;
+  color: $lightBlue;
   text-decoration: none;
   cursor: pointer;
   transition: all, 0.4s, ease-out;
@@ -21,11 +25,11 @@ a {
     color: $light;
   }
   &:active {
-    color: $green;
+    color: $lightBlue;
   }
 }
 
-.wrapper {
+.container {
   @include j-cf();
   width: 100%;
   margin: 0 auto;
@@ -45,22 +49,43 @@ a {
 
 }
 
-main {
+.page-section {
   min-height: 100vh;
+  position: relative;
+  font-size: 10px;
 }
-
-#modal-delete .modal-content {
-  text-align: center;
-  p {
-    margin-top: -40px;
-    padding-bottom: 20px;
+.hero {
+  @include backImage('../img/bg-hero-2.jpg');
+  header {
+    position: absolute;
+    left: 80px;
+    bottom: 80px;
+    z-index: 2;
+    user-select: none;
+    font-weight: 800;
+    letter-spacing: -4px;
+    h1 {
+      font-size: 6.0em;
+      color: $lightBlue;
+    }
+    h2 {
+      font-size: 5.0em;
+      span {
+        color: $orange;
+      }
+    }
+    h3 {
+      font-size: 5.0em;
+    }
   }
 }
-
-#modal-image .modal-content {
-  img {
-    width: 100%;
-    max-width: 800px;
-    display: block;
-  }
+#js-lines {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  background: rgba(33, 134, 165, 0.2);
+  background: radial-gradient(ellipse at center, rgba(255,255,255,0) 50%,$dark 100%);
 }
