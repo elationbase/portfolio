@@ -138,6 +138,7 @@ a:active {
   background: url("../img/bg-hero-2.jpg") no-repeat 50% 20%;
   background-size: cover;
   transition: all 0.3s ease-out;
+  background-attachment: fixed;
 }
 
 .hero header {
@@ -198,6 +199,7 @@ a:active {
   background: url("../img/bg-hero-2.jpg") no-repeat 50% 20%;
   background-size: cover;
   transition: all 0.3s ease-out;
+  background-attachment: fixed;
 }
 
 .hero header {
@@ -283,6 +285,7 @@ a:active {
   background: url("../img/bg-hero-1.jpg") no-repeat 50% 20%;
   background-size: cover;
   transition: all 0.3s ease-out;
+  background-attachment: fixed;
 }
 
 .strategy header h2 {
