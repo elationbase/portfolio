@@ -330,3 +330,122 @@ a:active {
 .portfolio .col img {
   padding: 10px;
 }
+
+.experience .track {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: dash 5s ease-in forwards;
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes beat {
+  0% {
+    transform: scale(0.1);
+  }
+  50% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0.1);
+  }
+}
+
+.experience .stop-name {
+  display: none;
+}
+
+.experience .track {
+  fill: none;
+  stroke-width: 4px;
+}
+
+.experience .stop-name {
+  fill: #231f20;
+  font-size: 10px;
+}
+
+.experience .line-num {
+  fill: #f2f1f1;
+  font-size: 10px;
+}
+
+.experience .line-stop {
+  stroke-miterlimit: 10;
+  stroke-width: 3px;
+  fill: #fff;
+  display: none;
+}
+
+.experience g .line-ends {
+  animation: beat 2s ease-out infinite;
+  transform-origin: center;
+}
+
+.experience g .line-ends:first-of-type {
+  animation: none;
+}
+
+.experience .line-1 {
+  stroke: #f7a63b;
+}
+
+.experience .line-1-stop {
+  stroke: #f7a63b;
+}
+
+.experience .line-1-ends {
+  fill: #f7a63b;
+}
+
+.experience .line-2 {
+  stroke: #d63635;
+}
+
+.experience .line-2-stop {
+  stroke: #d63635;
+}
+
+.experience .line-2-ends {
+  fill: #d63635;
+}
+
+.experience .line-3 {
+  stroke: #89173e;
+}
+
+.experience .line-3-stop {
+  stroke: #89173e;
+}
+
+.experience .line-3-ends {
+  fill: #89173e;
+}
+
+.experience .line-4 {
+  stroke: #32bbca;
+}
+
+.experience .line-4-stop {
+  stroke: #32bbca;
+}
+
+.experience .line-4-ends {
+  fill: #32bbca;
+}
+
+.experience .line-5 {
+  stroke: #2b488c;
+}
+
+.experience .line-5-stop {
+  stroke: #2b488c;
+}
+
+.experience .line-5-ends {
+  fill: #2b488c;
+}

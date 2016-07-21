@@ -101,6 +101,7 @@ gulp.task('views', function () {
 gulp.task('connect', function() {
   connect.server({
     root: outputDir,
+	port: 9000,
     livereload: true
   });
 });

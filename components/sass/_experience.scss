@@ -1,0 +1,113 @@
+// _experience.scss
+// ==============
+
+.experience {
+    .track {
+        stroke-dasharray: 1000;
+        stroke-dashoffset: 1000;
+        animation: dash 5s ease-in forwards;
+    }
+
+    @keyframes dash {
+      to {
+        stroke-dashoffset: 0;
+      }
+    }
+    @keyframes beat {
+      0% {
+        transform: scale(0.1);
+      }
+      50% {
+        transform: scale(1);
+      }
+      100% {
+        transform: scale(0.1);
+      }
+    }
+
+    // SVG
+    .stop-name {
+        display: none;
+    }
+    .track  {
+        fill: none;
+        stroke-width: 4px;
+    }
+    .stop-name {
+        fill: #231f20;
+        font-size: 10px;
+    }
+    .line-num {
+        fill: #f2f1f1;
+        font-size: 10px;
+    }
+    .line-stop {
+        stroke-miterlimit: 10;
+        stroke-width: 3px;
+        fill: #fff;
+        display: none;
+    }
+    g .line-ends {
+        animation: beat 2s ease-out infinite;
+        transform-origin: center;
+        &:first-of-type {
+            animation: none;
+        }
+    }
+
+    $line1Color : #f7a63b;
+    .line-1 {
+        stroke: $line1Color;
+    }
+    .line-1-stop {
+        stroke: $line1Color;
+    }
+    .line-1-ends {
+        fill: $line1Color;
+    }
+
+    $line2Color : #d63635;
+    .line-2 {
+        stroke: $line2Color;
+    }
+    .line-2-stop {
+        stroke: $line2Color;
+    }
+    .line-2-ends {
+        fill: $line2Color;
+    }
+
+    $line3Color : #89173e;
+    .line-3 {
+        stroke: $line3Color;
+    }
+    .line-3-stop {
+        stroke: $line3Color;
+    }
+    .line-3-ends {
+        fill: $line3Color;
+    }
+
+    $line4Color : #32bbca;
+    .line-4 {
+        stroke: $line4Color;
+    }
+    .line-4-stop {
+        stroke: $line4Color;
+    }
+    .line-4-ends {
+        fill: $line4Color;
+    }
+
+    $line5Color : #2b488c;
+    .line-5 {
+        stroke: $line5Color;
+    }
+    .line-5-stop {
+        stroke: $line5Color;
+    }
+    .line-5-ends {
+        fill: $line5Color;
+    }
+
+}
