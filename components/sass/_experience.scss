@@ -47,12 +47,17 @@
         fill: #fff;
         display: none;
     }
-    g .line-ends {
-        animation: beat 2s ease-out infinite;
+    g {
+      .line-ends {
+        cursor: pointer;
         transform-origin: center;
         &:first-of-type {
             animation: none;
         }
+      }
+      .line-num {
+        cursor: pointer;
+      }
     }
 
     $line1Color : #f7a63b;
