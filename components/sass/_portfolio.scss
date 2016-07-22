@@ -25,7 +25,23 @@
             left: 0;
             z-index: 2;
             background-color: rgba(0,0,0,0.5);
-            transform: translateX(100%) translateY(0);
+            transform: translateX(0) translateY(0);
+            transition: all 0.6s ease;
+            &.no-transition {
+                transition: none;
+            }
+            &.hover-top {
+                transform: translateY(-100%) translateX(0);
+            }
+            &.hover-right {
+                transform: translateX(100%) translateY(0);
+            }
+            &.hover-bottom {
+                transform: translateY(100%) translateX(0);
+            }
+            &.hover-left {
+                transform: translateX(-100%) translateY(0);
+            }
             .info-table {
                 display: table;
                 width: 100%;
