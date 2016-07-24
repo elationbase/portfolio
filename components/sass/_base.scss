@@ -10,6 +10,7 @@ body {
 }
 h1, h2, h3, h4, h5, h6 {
   //font-weight: 100;
+  font-family: $headFont;
 }
 
 img {
@@ -88,4 +89,34 @@ a {
   z-index: 1;
   background: rgba(33, 134, 165, 0.2);
   background: radial-gradient(ellipse at center, rgba(255,255,255,0) 50%,$dark 100%);
+}
+
+.page-half {
+    height: 50vh;
+    @include backImage('../img/demo_screens.jpg');
+}
+
+.parallax {
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    perspective: 1px;
+    -webkit-perspective: 1px;
+        .parallax_layer {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+    }
+    .parallax_layer_back {
+        transform: translateZ(-1px) scale(2);
+        img {
+            min-width: 100%;
+            //min-height: 100%;
+        }
+    }
+    .parallax_layer_base {
+        transform: translateZ(0);
+    }
 }

@@ -14,13 +14,8 @@ var gulp = require('gulp'),
 var htmlFiles = ['builds/development/*.html'],
 		jsFiles   = [
 			'components/scripts/libs/jquery-2.1.4.js',
-			'components/scripts/libs/angular/angular.min.js',
-			'components/scripts/libs/angular/angular-route.min.js',
-			'components/scripts/libs/angular/angular-animate.min.js',
-			'components/scripts/app.js',
-			'components/scripts/controllers.js',
-			'components/scripts/directives.js',
 			'components/scripts/particles.js',
+			'components/scripts/modules/*.js',
 			'components/scripts/global.js'
 		],
 		sassFiles  = ['components/sass/style.scss'],
@@ -63,13 +58,15 @@ gulp.task('js', function () {
 gulp.task('sass', function () {
  return gulp
  	 .src(sassFiles)
-   .pipe(sass({
+	 .pipe(sourcemaps.init())
+	 .pipe(sass({
 		 outputStyle: sassStyle,
 		 image: outputDir + 'img',
 	 }).on('error', sass.logError))
-   .pipe(autoprefixer('last 2 version', 'safari 4', 'ie 8', 'ie 9'))
-	 .pipe(gulp.dest(outputDir + 'css'))
-	 .pipe(connect.reload());
+	.pipe(autoprefixer('last 2 version', 'safari 4', 'ie 8', 'ie 9'))
+	.pipe(sourcemaps.write(outputDir + 'css'))
+	.pipe(gulp.dest(outputDir + 'css'))
+	.pipe(connect.reload());
 });
 
 // Images files
@@ -101,6 +98,7 @@ gulp.task('views', function () {
 gulp.task('connect', function() {
   connect.server({
     root: outputDir,
+	port: 9000,
     livereload: true
   });
 });
