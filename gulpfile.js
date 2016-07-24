@@ -58,13 +58,15 @@ gulp.task('js', function () {
 gulp.task('sass', function () {
  return gulp
  	 .src(sassFiles)
-   .pipe(sass({
+	 .pipe(sourcemaps.init())
+	 .pipe(sass({
 		 outputStyle: sassStyle,
 		 image: outputDir + 'img',
 	 }).on('error', sass.logError))
-   .pipe(autoprefixer('last 2 version', 'safari 4', 'ie 8', 'ie 9'))
-	 .pipe(gulp.dest(outputDir + 'css'))
-	 .pipe(connect.reload());
+	.pipe(autoprefixer('last 2 version', 'safari 4', 'ie 8', 'ie 9'))
+	.pipe(sourcemaps.write(outputDir + 'css'))
+	.pipe(gulp.dest(outputDir + 'css'))
+	.pipe(connect.reload());
 });
 
 // Images files

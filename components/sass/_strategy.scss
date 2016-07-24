@@ -1,27 +1,104 @@
 // _strategy.scss
 // ==============
-
-.strategy {
-  @include backImage('../img/bg-hero-1.jpg');
-  header {
+.promo1 {
+    @include backImage('../img/bg-hero-1.jpg');
+    min-height: 50vh;
+    position: relative;
     h2 {
-      font-size: 5.0em;
-      height: 50%;
-      margin-left: 50%;
-    }
-  }
-  ul {
-    height: 50%;
-    margin-left: 50%;
-    li {
-      h3 {
-        font-size: 2.6em;
+        font-size: 7.0em;
         color: $lightBlue;
-      }
-      p {
-        font-size: 2.0em;
-        color: $light;
-      }
+        position: absolute;
+        bottom: 0;
+        left: 20%;
+        margin-bottom: 100px;
     }
-  }
+}
+.strategy {
+    .stem-wrap {
+        position: relative;
+        height: 0px;
+        z-index: -1;
+    }
+	.stem-container {
+        width:80%;
+        float: right;
+    }
+	.stem {
+        position: fixed;
+        width: 50px;
+        height: 50vh;
+        top: 0;
+        background: $lightBlue;
+        z-index: 1;
+        transition: all 0.25s;
+    }
+	.stem-bg {
+        position: fixed;
+        width: 50px;
+        height: 100vh;
+        top: 0;
+        background: $lightgrey;
+        z-index: 0;
+    }
+    article {
+        margin-left: 20%;
+        position: relative;
+    }
+    .sprite {
+        background: url('../img/temp-sprite.png');
+        width: 50px;
+        position: absolute;
+        &-space {
+            background-position: 0 0;
+            top: 50px;
+            bottom: 0;
+            &-top {
+                top: 0;
+            }
+        }
+        &-research {
+            height: 50px;
+            background-position: -50px 0;
+        }
+        &-architecture {
+            height: 50px;
+            background-position: -100px 0;
+        }
+        &-design {
+            height: 50px;
+            background-position: -150px 0;
+        }
+        &-code {
+            height: 50px;
+            background-position: -200px 0;
+        }
+        &-integration {
+            height: 50px;
+            background-position: -250px 0;
+        }
+    }
+
+    .spacer {
+        position: relative;
+        height: 140px;
+    }
+    ul {
+        max-width: 800px;
+        li {
+            position: relative;
+            &:last-child {
+                padding-bottom: 140px;
+            }
+            h3 {
+                font-size: 2.6em;
+                color: $lightBlue;
+                padding: 10px 0 20px 80px;
+            }
+            p {
+                font-size: 2.0em;
+                color: $dark;
+                padding: 0 0 80px 80px;
+            }
+        }
+    }
 }

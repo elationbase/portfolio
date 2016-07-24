@@ -20,15 +20,19 @@
 		switch(dir) {
 			case 0:
 				$ele.find(info).addClass('hover-top');
+				console.log('top');
 				break;
 			case 1:
 				$ele.find(info).addClass('hover-right');
+				console.log('right');
 				break;
 			case 2:
 				$ele.find(info).addClass('hover-bottom');
+				console.log('bottom');
 				break;
 			case 3:
 				$ele.find(info).addClass('hover-left');
+				console.log('left');
 				break;
 			default:
 				break;
@@ -41,11 +45,14 @@
 			dir = getHoverDir( $this, event.pageX, event.pageY );
 			$this.find(info).removeClass('hover-top hover-right hover-bottom hover-left').addClass('no-transition');
 			hoverCase(dir, $this);
-			$this.find(info).removeClass('hover-top hover-right hover-bottom hover-left no-transition');
+			setTimeout(function() {
+				$this.find(info).removeClass('hover-top hover-right hover-bottom hover-left no-transition');
+			},10);
+
 		}).on( 'mouseleave', function( event ) {
 			$this = $(this);
 			dir = getHoverDir( $(this), event.pageX, event.pageY );
-			$this.find(info).removeClass('hover-top hover-right hover-bottom hover-left')
+			$this.find(info).removeClass('hover-top hover-right hover-bottom hover-left');
 			hoverCase(dir, $this);
 		});
 	}
@@ -87,6 +94,11 @@
 	/* trigger when page is ready */
 	$(document).ready(init);
 	$(window).on('scroll', addStick);
+
+	$(window).on('scroll', function () {
+		//$('.hero').addClass('pt-page-scaleDown');
+		//$('.intro').addClass('pt-page-moveFromBottom');
+	});
 
 	/* optional triggers
 

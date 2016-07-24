@@ -61,12 +61,16 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 }
 
 body {
-  font-family: helvetica, sans-serif;
+  font-family: Source Sans Pro, helvetica, sans-serif;
   font-weight: 100;
   font-size: 10px;
   background: #F1F1F1;
-  color: #2c3e50;
+  color: #2C3E50;
   min-width: 400px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: Jenna Sue, helvetica, sans-serif;
 }
 
 img {
@@ -179,7 +183,78 @@ a:active {
   left: 0;
   z-index: 1;
   background: rgba(33, 134, 165, 0.2);
-  background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0) 50%, #2c3e50 100%);
+  background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0) 50%, #2C3E50 100%);
+}
+
+.page-half {
+  height: 50vh;
+  background: url("../img/demo_screens.jpg") no-repeat 50% 20%;
+  background-size: cover;
+  transition: all 0.3s ease-out;
+  background-attachment: fixed;
+}
+
+.parallax {
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  perspective: 1px;
+  -webkit-perspective: 1px;
+}
+
+.parallax .parallax_layer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.parallax .parallax_layer_back {
+  transform: translateZ(-1px) scale(2);
+}
+
+.parallax .parallax_layer_back img {
+  min-width: 100%;
+}
+
+.parallax .parallax_layer_base {
+  transform: translateZ(0);
+}
+
+.pt-page-scaleDown {
+  animation: scaleDown .7s ease both;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+}
+
+@keyframes scaleDown {
+  from {
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+}
+
+.pt-page-moveFromBottom {
+  animation: moveFromBottom .6s ease both;
+}
+
+@keyframes moveFromBottom {
+  from {
+    transform: translateY(100%);
+  }
+}
+
+.pt-page-ontop {
+  z-index: 999;
+}
+
+.intro {
+  transition: all 1s;
 }
 
 .main-footer {
@@ -240,10 +315,11 @@ a:active {
   left: 0;
   z-index: 1;
   background: rgba(33, 134, 165, 0.2);
-  background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.2) 50%, #2c3e50 100%);
+  background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.2) 50%, #2C3E50 100%);
 }
 
 .intro {
+  background-color: #F1F1F1;
   text-align: center;
 }
 
@@ -281,45 +357,152 @@ a:active {
   margin-top: 20px;
 }
 
-.strategy {
+.promo1 {
   background: url("../img/bg-hero-1.jpg") no-repeat 50% 20%;
   background-size: cover;
   transition: all 0.3s ease-out;
   background-attachment: fixed;
+  min-height: 50vh;
+  position: relative;
 }
 
-.strategy header h2 {
-  font-size: 5.0em;
-  height: 50%;
-  margin-left: 50%;
+.promo1 h2 {
+  font-size: 7.0em;
+  color: #26b4c5;
+  position: absolute;
+  bottom: 0;
+  left: 20%;
+  margin-bottom: 100px;
+}
+
+.strategy .stem-wrap {
+  position: relative;
+  height: 0px;
+  z-index: -1;
+}
+
+.strategy .stem-container {
+  width: 80%;
+  float: right;
+}
+
+.strategy .stem {
+  position: fixed;
+  width: 50px;
+  height: 50vh;
+  top: 0;
+  background: #26b4c5;
+  z-index: 1;
+  transition: all 0.25s;
+}
+
+.strategy .stem-bg {
+  position: fixed;
+  width: 50px;
+  height: 100vh;
+  top: 0;
+  background: #E4E4E4;
+  z-index: 0;
+}
+
+.strategy article {
+  margin-left: 20%;
+  position: relative;
+}
+
+.strategy .sprite {
+  background: url("../img/temp-sprite.png");
+  width: 50px;
+  position: absolute;
+}
+
+.strategy .sprite-space {
+  background-position: 0 0;
+  top: 50px;
+  bottom: 0;
+}
+
+.strategy .sprite-space-top {
+  top: 0;
+}
+
+.strategy .sprite-research {
+  height: 50px;
+  background-position: -50px 0;
+}
+
+.strategy .sprite-architecture {
+  height: 50px;
+  background-position: -100px 0;
+}
+
+.strategy .sprite-design {
+  height: 50px;
+  background-position: -150px 0;
+}
+
+.strategy .sprite-code {
+  height: 50px;
+  background-position: -200px 0;
+}
+
+.strategy .sprite-integration {
+  height: 50px;
+  background-position: -250px 0;
+}
+
+.strategy .spacer {
+  position: relative;
+  height: 140px;
 }
 
 .strategy ul {
-  height: 50%;
-  margin-left: 50%;
+  max-width: 800px;
+}
+
+.strategy ul li {
+  position: relative;
+}
+
+.strategy ul li:last-child {
+  padding-bottom: 140px;
 }
 
 .strategy ul li h3 {
   font-size: 2.6em;
   color: #26b4c5;
+  padding: 10px 0 20px 80px;
 }
 
 .strategy ul li p {
   font-size: 2.0em;
-  color: #F1F1F1;
+  color: #2C3E50;
+  padding: 0 0 80px 80px;
 }
 
 .portfolio {
-  max-width: 1300px;
+  background-color: #F1F1F1;
+  *zoom: 1;
 }
 
-.portfolio header h2 {
-  font-size: 5.0em;
-  height: 50%;
-  margin-left: 50%;
+.portfolio:before, .portfolio:after {
+  content: '';
+  display: table;
 }
 
-.portfolio .col {
+.portfolio:after {
+  clear: both;
+}
+
+.portfolio .w66 {
+  float: left;
+  clear: none;
+  width: 66.66667%;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.portfolio .w33 {
   float: left;
   clear: none;
   width: 33.33333%;
@@ -327,60 +510,32 @@ a:active {
   margin-right: 0;
 }
 
+.portfolio header h2 {
+  font-size: 10.0em;
+  height: 50%;
+  margin-left: 50%;
+}
+
+.portfolio .col {
+  padding: 0 5px;
+}
+
 .portfolio .col a {
   display: block;
-  margin: 10px;
   overflow: hidden;
   position: relative;
-}
-
-.portfolio .col a .info-container {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 2;
-  background-color: rgba(0, 0, 0, 0.5);
-  transform: translateX(0) translateY(0);
-  transition: all 0.6s ease;
-}
-
-.portfolio .col a .info-container.no-transition {
-  transition: none;
-}
-
-.portfolio .col a .info-container.hover-top {
-  transform: translateY(-100%) translateX(0);
-}
-
-.portfolio .col a .info-container.hover-right {
-  transform: translateX(100%) translateY(0);
-}
-
-.portfolio .col a .info-container.hover-bottom {
-  transform: translateY(100%) translateX(0);
-}
-
-.portfolio .col a .info-container.hover-left {
-  transform: translateX(-100%) translateY(0);
-}
-
-.portfolio .col a .info-container .info-table {
-  display: table;
-  width: 100%;
-  height: 100%;
-}
-
-.portfolio .col a .info-container .info-cell {
-  display: table-cell;
-  height: 100%;
-  text-align: center;
-  vertical-align: middle;
+  border: 5px solid #F1F1F1;
 }
 
 .portfolio .col a img {
+  display: block;
   transition: all 0.5s ease-out;
+  -webkit-filter: grayscale(0%);
+          filter: grayscale(0%);
+}
+
+.portfolio .col a h3 {
+  font-size: 6.0em;
 }
 
 .portfolio .col a:hover .info-container {
@@ -388,8 +543,81 @@ a:active {
 }
 
 .portfolio .col a:hover img {
-  transform: scale(1.4);
-  transition: all 3.0s ease-out;
+  transform: scale(1.3);
+  transition: all 5.0s ease-out;
+  -webkit-filter: grayscale(100%);
+          filter: grayscale(100%);
+}
+
+.portfolio .col a:hover h3 {
+  margin-top: 0;
+  opacity: 1;
+}
+
+.portfolio .col a:hover p {
+  margin-top: 0;
+  opacity: 1;
+}
+
+.portfolio .info-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+  background-color: rgba(0, 0, 0, 0.4);
+  transform: translateX(0) translateY(0);
+  transition: all 0.6s ease;
+}
+
+.portfolio .info-container.no-transition {
+  transition: none;
+}
+
+.portfolio .info-container.hover-top {
+  transform: translateY(-100%) translateX(0);
+}
+
+.portfolio .info-container.hover-right {
+  transform: translateX(100%) translateY(0);
+}
+
+.portfolio .info-container.hover-bottom {
+  transform: translateY(100%) translateX(0);
+}
+
+.portfolio .info-container.hover-left {
+  transform: translateX(-100%) translateY(0);
+}
+
+.portfolio .info-container .info-table {
+  display: table;
+  width: 100%;
+  height: 100%;
+}
+
+.portfolio .info-container .info-cell {
+  display: table-cell;
+  height: 100%;
+  text-align: center;
+  vertical-align: middle;
+  padding: 20px;
+}
+
+.portfolio .info-container h3 {
+  font-size: 2.4em;
+  margin-bottom: 10px;
+  margin-top: 100px;
+  opacity: 0;
+  transition: all 1.0s ease-out;
+}
+
+.portfolio .info-container p {
+  font-size: 1.4em;
+  margin-top: 200px;
+  opacity: 0;
+  transition: all 1.0s ease-out;
 }
 
 .experience .track {
@@ -514,3 +742,5 @@ a:active {
 .experience .line-5-ends {
   fill: #2b488c;
 }
+
+/*# sourceMappingURL=builds/development/css/style.css.map */
