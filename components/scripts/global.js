@@ -88,12 +88,18 @@
 
 	var init = function() {
 		prortfolioHover();
+		//startHero();
+	}
+
+	var scroll = function() {
+		addStick();
+		//startHero();
 	}
 
 
 	/* trigger when page is ready */
 	$(document).ready(init);
-	$(window).on('scroll', addStick);
+	$(window).on('scroll', scroll);
 
 	$(window).on('scroll', function () {
 		//$('.hero').addClass('pt-page-scaleDown');

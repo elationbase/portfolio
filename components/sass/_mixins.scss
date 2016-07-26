@@ -3,7 +3,6 @@
 @mixin backImage($image) {
   background: url($image) no-repeat 50% 20% ;
   background-size: cover;
-  transition: all 0.3s ease-out;
   background-attachment: fixed;
 }
 

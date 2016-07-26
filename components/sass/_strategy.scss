@@ -14,32 +14,6 @@
     }
 }
 .strategy {
-    .stem-wrap {
-        position: relative;
-        height: 0px;
-        z-index: -1;
-    }
-	.stem-container {
-        width:80%;
-        float: right;
-    }
-	.stem {
-        position: fixed;
-        width: 50px;
-        height: 50vh;
-        top: 0;
-        background: $lightBlue;
-        z-index: 1;
-        transition: all 0.25s;
-    }
-	.stem-bg {
-        position: fixed;
-        width: 50px;
-        height: 100vh;
-        top: 0;
-        background: $lightgrey;
-        z-index: 0;
-    }
     article {
         margin-left: 20%;
         position: relative;

@@ -13,7 +13,7 @@
 
 //Core partials
 @import "base";
-@import "modules";
+//@import "modules";
 @import "header";
 @import "nav";
 @import "footer";
@@ -27,3 +27,5 @@
 
 
 // Modules partials
+@import "projects";
+@import "stemScroll";

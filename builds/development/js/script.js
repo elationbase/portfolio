@@ -9324,19 +9324,24 @@ particlesJS('js-lines', {
 });
 
 
-function doSetTimeout (u) {
-    setTimeout(function() {
-        u.addClass('on');
-        console.log(u[0]);
-    }, 1000);
-}
+// remap jQuery to $
+(function($){
+	'use strict'
 
-$(document).ready(function(){
-    $('.line-tip').on('mouseenter', this, function(){
-        var stops = $(this).siblings('.path-stops');
-        stops.addClass('add');
+    function doSetTimeout (u) {
+        setTimeout(function() {
+            u.addClass('on');
+            console.log(u[0]);
+        }, 1000);
+    }
+
+    $(document).ready(function(){
+        $('.line-tip').on('mouseenter', this, function(){
+            var stops = $(this).siblings('.path-stops');
+            stops.addClass('add');
+        });
     });
-});
+})(window.jQuery);
 
 // remap jQuery to $
 (function($){
@@ -9460,12 +9465,18 @@ $(document).ready(function(){
 
 	var init = function() {
 		prortfolioHover();
+		//startHero();
+	}
+
+	var scroll = function() {
+		addStick();
+		//startHero();
 	}
 
 
 	/* trigger when page is ready */
 	$(document).ready(init);
-	$(window).on('scroll', addStick);
+	$(window).on('scroll', scroll);
 
 	$(window).on('scroll', function () {
 		//$('.hero').addClass('pt-page-scaleDown');

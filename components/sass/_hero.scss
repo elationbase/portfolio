@@ -2,27 +2,43 @@
 // ==============
 
 .hero {
-  @include backImage('../img/bg-hero-2.jpg');
+  @include backImage('../img/bg-hero-2.jpg'); 
+  user-select: none;
+  .logo {
+      max-width: 200px;
+      position: absolute;
+      top: 80px;
+      left: 50%;
+      margin-left: -100px;
+      z-index: 1;
+  }
   header {
     position: absolute;
-    left: 80px;
+    left: 50%;
     bottom: 80px;
+    margin-left: -160px;
     z-index: 2;
-    user-select: none;
-    font-weight: 800;
-    letter-spacing: -4px;
+    font-weight: 100;
+    text-align: center;
     h1 {
-      font-size: 6.0em;
+      font-size: 8.0em;
       color: $lightBlue;
     }
     h2 {
-      font-size: 5.0em;
-      span {
-        color: $orange;
-      }
+        font-size: 3.0em;
+        font-family: $bodyFont;
+        color: $light;
+        //letter-spacing: -3px;
+        span {
+            color: $orange;
+            font-weight: 800;
+        }
     }
     h3 {
-      font-size: 5.0em;
+        font-size: 3.0em;
+        font-family: $bodyFont;
+        color: $light;
+        //letter-spacing: -3px;
     }
   }
 }
@@ -32,7 +48,7 @@
   right: 0;
   bottom: 0;
   left: 0;
-  z-index: 1;
+  z-index: 3;
   background: rgba(33, 134, 165, 0.2);
   background: radial-gradient(ellipse at center, rgba(255,255,255,0.2) 50%,$dark 100%);
 }
