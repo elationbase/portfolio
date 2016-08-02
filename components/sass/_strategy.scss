@@ -18,44 +18,26 @@
         margin-left: 20%;
         position: relative;
     }
-    .sprite {
-        background: url('../img/temp-sprite.png');
-        width: 50px;
+    .ico {
+        fill: $light;
         position: absolute;
-        &-space {
-            background-position: 0 0;
-            top: 50px;
-            bottom: 0;
-            &-top {
-                top: 0;
-            }
-        }
-        &-research {
-            height: 50px;
-            background-position: -50px 0;
-        }
-        &-architecture {
-            height: 50px;
-            background-position: -100px 0;
-        }
-        &-design {
-            height: 50px;
-            background-position: -150px 0;
-        }
-        &-code {
-            height: 50px;
-            background-position: -200px 0;
-        }
-        &-integration {
-            height: 50px;
-            background-position: -250px 0;
-        }
     }
 
     .spacer {
         position: relative;
         height: 140px;
+        background: url(../img/line.png) repeat-y;
     }
+
+    .line {
+        position: absolute;
+        top: 50px;
+        bottom: 0;
+        left: 0;
+        width: 50px;
+        background: url(../img/line.png) repeat-y;
+    }
+
     ul {
         max-width: 800px;
         li {

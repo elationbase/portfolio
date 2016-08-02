@@ -20,26 +20,22 @@
 		switch(dir) {
 			case 0:
 				$ele.find(info).addClass('hover-top');
-				console.log('top');
 				break;
 			case 1:
 				$ele.find(info).addClass('hover-right');
-				console.log('right');
 				break;
 			case 2:
 				$ele.find(info).addClass('hover-bottom');
-				console.log('bottom');
 				break;
 			case 3:
 				$ele.find(info).addClass('hover-left');
-				console.log('left');
 				break;
 			default:
 				break;
 		}
 	}
 
-	var prortfolioHover = function () {
+	var portfolioHover = function () {
 		$('.col a').on('mouseenter', function(event) {
 			$this = $(this);
 			dir = getHoverDir( $this, event.pageX, event.pageY );
@@ -63,7 +59,7 @@
 	*/
 	var winTop = $(window).scrollTop();
 	var stickClass = 'js-stick-on';
-	var offset, pos;
+	var offset, offsetTop, pos;
 
 	var addStick = function(offset) {
 
@@ -71,39 +67,68 @@
 
 		$('.js-stick-ele').each(function() {
 
-			offset = $(this).data('offset');
-			pos = $(this).position().top - winTop;
+			offset = $(this).data('offset'),
+			pos = $(this).position().top - winTop,
+			offsetTop = $(this).offset().top;
 
 			if (pos < offset) {
-				if (!$(this).hasClass(stickClass)) {
-					$(this).addClass(stickClass);
-				}
-			} else {
-				if ($(this).hasClass(stickClass)) {
+				if ($(this).hasClass(stickClass) && offsetTop + offset < winTop) {
 					$(this).removeClass(stickClass);
+				} else {
+					if (!$(this).hasClass(stickClass)) {
+						$(this).addClass(stickClass);
+					}
 				}
 			}
+
+			console.log (offsetTop + offset);
+			console.log ('------------');
+			console.log(winTop);
 		});
 	};
 
+	var scrollPercent,
+		projectH = $('.project-pages').height(),
+		winH = $(window).height();
+	var scrollBar = function () {
+		scrollPercent = Math.floor( ( $(window).scrollTop() / (projectH - winH) ) * 100 );
+		$('.js-scroll-bar').css('width', scrollPercent + '%');
+	}
+
+
+
+
 	var init = function() {
-		prortfolioHover();
+		portfolioHover();
+		scrollBar();
 		//startHero();
 	}
 
 	var scroll = function() {
 		addStick();
+		scrollBar();
 		//startHero();
 	}
+
+	var resizeVars = function() {
+		winTop = $(window).scrollTop(),
+		projectH = $('.project-pages').height(),
+		winH = $(window).height()
+	}
+
 
 
 	/* trigger when page is ready */
 	$(document).ready(init);
 	$(window).on('scroll', scroll);
+	$(window).on('sesize', resizeVars);
 
 	$(window).on('scroll', function () {
 		//$('.hero').addClass('pt-page-scaleDown');
 		//$('.intro').addClass('pt-page-moveFromBottom');
+
+
+
 	});
 
 	/* optional triggers

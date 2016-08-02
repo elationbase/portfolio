@@ -170,6 +170,12 @@ a:active {
   transform: translateZ(0);
 }
 
+.ico {
+  height: 50px;
+  width: 50px;
+  display: inline-block;
+}
+
 .main-header {
   display: none;
 }
@@ -327,50 +333,24 @@ a:active {
   position: relative;
 }
 
-.strategy .sprite {
-  background: url("../img/temp-sprite.png");
-  width: 50px;
+.strategy .ico {
+  fill: #F1F1F1;
   position: absolute;
-}
-
-.strategy .sprite-space {
-  background-position: 0 0;
-  top: 50px;
-  bottom: 0;
-}
-
-.strategy .sprite-space-top {
-  top: 0;
-}
-
-.strategy .sprite-research {
-  height: 50px;
-  background-position: -50px 0;
-}
-
-.strategy .sprite-architecture {
-  height: 50px;
-  background-position: -100px 0;
-}
-
-.strategy .sprite-design {
-  height: 50px;
-  background-position: -150px 0;
-}
-
-.strategy .sprite-code {
-  height: 50px;
-  background-position: -200px 0;
-}
-
-.strategy .sprite-integration {
-  height: 50px;
-  background-position: -250px 0;
 }
 
 .strategy .spacer {
   position: relative;
   height: 140px;
+  background: url(../img/line.png) repeat-y;
+}
+
+.strategy .line {
+  position: absolute;
+  top: 50px;
+  bottom: 0;
+  left: 0;
+  width: 50px;
+  background: url(../img/line.png) repeat-y;
 }
 
 .strategy ul {
@@ -707,9 +687,26 @@ a:active {
   text-align: center;
 }
 
+.project-pages .base-header .scroll-progress {
+  position: absolute;
+  top: 50px;
+  right: 0;
+  left: 0;
+  height: 5px;
+  background-color: rbga(0, 0, 0, 0.5);
+}
+
+.project-pages .base-header .scroll-progress .js-scroll-bar {
+  background-color: #e64f25;
+  height: 5px;
+  display: block;
+  width: 0;
+  transition: all 0.2s;
+}
+
 .project .project-header {
   width: 100%;
-  height: 50vh;
+  height: 70vh;
   display: table;
   text-align: center;
   position: relative;
@@ -735,8 +732,16 @@ a:active {
 }
 
 .project .project-basic {
-  padding: 30px 0;
-  background-color: #2C3E50;
+  width: 30%;
+  float: left;
+  padding: 60px;
+  background-color: #F1F1F1;
+}
+
+.project .project-basic.js-stick-on {
+  position: fixed;
+  top: 50px;
+  bottom: 0;
 }
 
 .project .project-basic ul {
@@ -752,50 +757,27 @@ a:active {
   clear: both;
 }
 
-.project .project-basic ul.w3 li {
-  float: left;
-  clear: none;
-  width: 33.33333%;
-  margin-left: 0;
-  margin-right: 0;
-}
-
-.project .project-basic ul.w4 li {
-  float: left;
-  clear: none;
-  width: 25%;
-  margin-left: 0;
-  margin-right: 0;
-}
-
-.project .project-basic ul.w5 li {
-  float: left;
-  clear: none;
-  width: 20%;
-  margin-left: 0;
-  margin-right: 0;
-}
-
 .project .project-basic li {
-  text-align: center;
+  text-align: right;
+  padding-bottom: 40px;
 }
 
 .project .project-basic li span {
-  font-size: 1.4em;
+  font-size: 1.8em;
   text-transform: uppercase;
-  font-weight: 800;
+  font-weight: 400;
   margin-bottom: 10px;
   display: block;
   color: #26b4c5;
 }
 
 .project .project-basic li p {
-  font-size: 1.8em;
-  color: #F1F1F1;
+  font-size: 3.6em;
+  color: #2C3E50;
 }
 
 .project .project-main {
-  margin: 0 20%;
+  margin-left: 30%;
   position: relative;
 }
 
@@ -820,7 +802,7 @@ a:active {
 }
 
 .project .project-main-container {
-  padding-left: 80px;
+  padding: 0 80px;
 }
 
 .project .project-main-container .sprite {
@@ -842,8 +824,7 @@ a:active {
 }
 
 .stem-container {
-  width: 80%;
-  float: right;
+  margin-left: 30%;
 }
 
 .stem {
@@ -851,6 +832,7 @@ a:active {
   width: 50px;
   height: 50vh;
   top: 0;
+  left: 30%;
   background: #26b4c5;
   z-index: 1;
   transition: all 0.25s;
@@ -861,6 +843,7 @@ a:active {
   width: 50px;
   height: 100vh;
   top: 0;
+  left: 30%;
   background: #E4E4E4;
   z-index: 0;
 }

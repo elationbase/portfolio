@@ -34,13 +34,29 @@
             padding: 0 100px;
             text-align: center;
         }
+
+        .scroll-progress {
+            position: absolute;
+            top: 50px;
+            right: 0;
+            left: 0;
+            height: 5px;
+            background-color: rgba($dark, 0.5)
+            .js-scroll-bar {
+                background-color: $orange;
+                height: 5px;
+                display: block;
+                width: 0;
+                transition: all 0.2s
+            }
+        }
     }
 }
 
 .project {
     .project-header {
         width: 100%;
-        height: 50vh;
+        height: 70vh;
         display: table;
         text-align: center;
         position: relative;
@@ -62,45 +78,38 @@
         }
     }
     .project-basic {
-        padding: 30px 0;
-        background-color: $dark;
+        width: 30%;
+        float: left;
+        padding: 60px;
+        background-color: $light;
+        &.js-stick-on {
+            position: fixed;
+            top: 50px;
+            bottom: 0;
+        }
         ul {
             @include j-cf();
-            &.w3 {
-                li {
-                    @include j-span(1/3);
-                }
-            }
-            &.w4 {
-                li {
-                    @include j-span(1/4);
-                }
-            }
-            &.w5 {
-                li {
-                    @include j-span(1/5);
-                }
-            }
         }
         li {
-            text-align: center;
+            text-align: right;
+            padding-bottom: 40px;
             span {
-                font-size: 1.4em;
+                font-size: 1.8em;
                 text-transform: uppercase;
-                font-weight: 800;
+                font-weight: 400;
                 margin-bottom: 10px;
                 display: block;
                 color: $lightBlue;
             }
             p {
-                font-size: 1.8em;
-                color: $light;
+                font-size: 3.6em;
+                color: $dark;
             }
         }
     }
 
     .project-main {
-        margin: 0 20%;
+        margin-left: 30%;
         position: relative;
         header {
             position: relative;
@@ -120,7 +129,7 @@
         padding-bottom: 100px;
     }
     .project-main-container {
-        padding-left: 80px;
+        padding: 0 80px;
         .sprite {
             margin-left: -80px;
         }
