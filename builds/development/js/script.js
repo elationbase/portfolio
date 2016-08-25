@@ -9434,34 +9434,24 @@ particlesJS('js-lines', {
 	/*
 		Stick elements
 	*/
-	var winTop = $(window).scrollTop();
-	var stickClass = 'js-stick-on';
-	var offset, offsetTop, pos;
+	var
+	winTop = $(window).scrollTop(),
+	stickClass = 'js-stick-on',
+	$stick = $('.js-stick-ele'),
+	offset = $stick.data('offset'),
+	offsetTop = $stick.offset().top;
 
-	var addStick = function(offset) {
-
-		winTop = $(window).scrollTop();
-
-		$('.js-stick-ele').each(function() {
-
-			offset = $(this).data('offset'),
-			pos = $(this).position().top - winTop,
-			offsetTop = $(this).offset().top;
-
-			if (pos < offset) {
-				if ($(this).hasClass(stickClass) && offsetTop + offset < winTop) {
-					$(this).removeClass(stickClass);
-				} else {
-					if (!$(this).hasClass(stickClass)) {
-						$(this).addClass(stickClass);
-					}
-				}
+	var addStick = function() {
+		winTop = $(window).scrollTop()
+		if (offsetTop - offset > winTop) {
+			if ($stick.hasClass(stickClass)) {
+				$stick.removeClass(stickClass);
 			}
-
-			console.log (offsetTop + offset);
-			console.log ('------------');
-			console.log(winTop);
-		});
+		} else {
+			if (!$stick.hasClass(stickClass)) {
+				$stick.addClass(stickClass);
+			}
+		}
 	};
 
 	var scrollPercent,
@@ -9478,19 +9468,19 @@ particlesJS('js-lines', {
 	var init = function() {
 		portfolioHover();
 		scrollBar();
-		//startHero();
+		addStick();
 	}
 
 	var scroll = function() {
 		addStick();
 		scrollBar();
-		//startHero();
 	}
 
 	var resizeVars = function() {
 		winTop = $(window).scrollTop(),
 		projectH = $('.project-pages').height(),
-		winH = $(window).height()
+		winH = $(window).height(),
+		offsetTop = $stick.offset().top;
 	}
 
 
@@ -9498,15 +9488,7 @@ particlesJS('js-lines', {
 	/* trigger when page is ready */
 	$(document).ready(init);
 	$(window).on('scroll', scroll);
-	$(window).on('sesize', resizeVars);
-
-	$(window).on('scroll', function () {
-		//$('.hero').addClass('pt-page-scaleDown');
-		//$('.intro').addClass('pt-page-moveFromBottom');
-
-
-
-	});
+	$(window).on('resize', resizeVars);
 
 	/* optional triggers
 
