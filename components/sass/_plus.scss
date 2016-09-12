@@ -1,0 +1,31 @@
+// _plus.scss
+// ==============
+.plus {
+    background-color: $orange;
+    font-weight: 800;
+    border-radius: 50%;
+    display: inline-block;
+    line-height: 1;
+    vertical-align: -4px;
+    animation: color_change 6s infinite;
+    position: relative;
+    text-align: center;
+    &:after {
+        content: '+';
+        position: absolute;
+        top: 0;
+        left: 0;
+        color: $light;
+        animation: cross_rotate 8s infinite;
+    }
+}
+@keyframes color_change {
+	0% { background-color: $orange; }
+	50% { background-color: $lightBlue; }
+	100% { background-color: $orange; }
+}
+@keyframes cross_rotate {
+	30% { transform: rotate(0deg); }
+	50% { transform: rotate(360deg); }
+	55% { transform: rotate(0deg); }
+}

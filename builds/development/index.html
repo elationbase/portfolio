@@ -12,23 +12,25 @@
 
 <body>
 
-<header class="main-header">
-	<div class="wrapper">
-		<h1><a href="#/">al montero resume</a></h1>
+<header class="main__header">
+	<div class="section--container">
+		<img src="img/am-logo.png" alt="" class="logo">
+		<h1>Alvaro Montero</h1>
+		<h2>UX Designer <span class="plus"></span> UI Engineer</h2>
 	</div>
 </header>
 
-<main>
-	<section class="page-section hero">
+<main class="main__content">
+	<section class="section section__hero section--full">
 		<div id="js-lines"></div>
 		<img src="img/am-logo.png" alt="" class="logo">
 		<header>
 			<h1>Alvaro Montero</h1>
-			<h2>UX Designer <span>+</span> UI Engineer</h2>
+			<h2>UX Designer <span class="plus"></span> UI Engineer</h2>
 			<h3>a Creative Technologist</h3>
 		</header>
 	</section>
-	<section class="page-section intro container">
+	<section class="section section__intro section--full section--container">
 		<header>
 			<h1>Introduction</h1>
 		</header>
@@ -81,7 +83,7 @@
 			</ul>
 		</article>
 	</section>
-	<section class="page-section strategy">
+	<section class="section section__strategy section--full">
 		<header class="page-section promo1">
 			<h2>Results start with strategy</h2>
 		</header>
@@ -138,7 +140,7 @@
 			</ul>
 		</article>
 	</section>
-	<section class="page-section portfolio">
+	<section class="section section__portfolio section--full section--container">
 		<header>
 			<!--h2>Portfolio</h2-->
 		</header>
@@ -381,15 +383,15 @@
 			</div>
 		</article>
 	</section>
-	<section class="parallax">
-		<div class="parallax_layer parallax_layer_back">
-			<img src="img/demo_screens.jpg" alt="">
+	<div class="section section__parallax">
+		<div class="parallax__layer parallax__layer--back">
+			<h3>hello background</h3>
 		</div>
-		<div class="parallax_layer parallax_layer_base">
+		<div class="parallax__layer parallax__layer--base">
 			<h3>hello</h3>
 		</div>
-	</section>
-	<section class="page-section experience container">
+	</div>
+	<section class="section section__experience section--full section--container">
 		<header>
 			<h2>Experience</h2>
 		</header>
@@ -559,7 +561,13 @@
 	</section>
 </main>
 
-<section class="project-pages" style="display:block;">
+<footer class="main__footer">
+	<p>&copy; Copyright 2016. All Rights Reserved.</p>
+</footer>
+
+
+
+<section class="project-pages" style="display:none;">
 	<aside class="stem-wrap">
 		<div class="stem-container">
 			<div class="stem"></div>
@@ -632,9 +640,6 @@
 	</article>
 </section>
 
-<footer class="main-footer">
-	<p>&copy; Copyright 2016. All Rights Reserved.</p>
-</footer>
 
 
 <script src="js/script.js"></script>

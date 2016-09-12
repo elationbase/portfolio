@@ -1,12 +1,16 @@
 // _base.scss
 // ==============
+html {
+    font-size: 16px;
+}
+
 body {
   font-family: $bodyFont;
   font-weight: 100;
-  font-size: 10px;
+  font-size: rem(16);
   background: $light;
   color: $dark;
-  min-width: 400px;
+  min-width: rem(400);
 }
 h1, h2, h3, h4, h5, h6 {
   //font-weight: 100;
@@ -30,63 +34,36 @@ a {
   }
 }
 
-.container {
-  @include j-cf();
-  width: 100%;
-  margin: 0 auto;
-  position: relative;
-  @include media(mobile) {
-    padding: 0 20px;
-  };
-  @include media(tablet) {
-    padding: 0 40px;
-  };
-  @include media(laptop) {
-    padding: 0 70px;
-  };
-  @include media(desktop) {
-    padding: 0 100px;
-  };
-
-}
-
-.page-section {
-  min-height: 100vh;
-  position: relative;
-  font-size: 10px;
-}
-
-.page-half {
-    height: 50vh;
-}
-
-.parallax {
-    height: 100vh;
-    overflow-x: hidden;
-    overflow-y: auto;
-    perspective: 1px;
-    -webkit-perspective: 1px;
-        .parallax_layer {
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
+.section {
+    position: relative;
+    width: 100%;
+    &--full {
+        min-height: 100vh;
     }
-    .parallax_layer_back {
-        transform: translateZ(-1px) scale(2);
-        img {
-            min-width: 100%;
-            //min-height: 100%;
-        }
+    &--half {
+        height: 50vh;
     }
-    .parallax_layer_base {
-        transform: translateZ(0);
+    &--container {
+      @include j-cf();
+      margin: 0 auto;
+      position: relative;
+      @include media(mobile) {
+        padding: rem(0 20);
+      };
+      @include media(tablet) {
+        padding: rem(0 40);
+      };
+      @include media(laptop) {
+        padding: rem(0 70);
+      };
+      @include media(desktop) {
+        padding: rem(0 100);
+      };
     }
 }
 
 .ico {
-    height: 50px;
-    width: 50px;
+    height: rem(50);
+    width: rem(50);
     display: inline-block;
 }

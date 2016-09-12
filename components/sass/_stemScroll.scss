@@ -13,7 +13,7 @@
     width: 50px;
     height: 50vh;
     top: 0;
-    left: 30%;
+    left: 20%;
     background: $lightBlue;
     z-index: 1;
     transition: all 0.25s;
@@ -23,46 +23,46 @@
     width: 50px;
     height: 100vh;
     top: 0;
-    left: 30%;
+    left: 20%;
     background: $lightgrey;
     z-index: 0;
 }
 .sprite {
     background: url('../img/temp-sprite.png');
-    width: 50px;
+    width: rem(50);
     position: absolute;
     z-index: 5;
     &-space {
         background-position: 0 0;
-        top: 50px;
+        top: rem(50);
         bottom: 0;
         &-top {
             top: 0;
         }
     }
     &-research {
-        height: 50px;
+        height: rem(50);
         background-position: -50px 0;
     }
     &-architecture {
-        height: 50px;
+        height: rem(50);
         background-position: -100px 0;
     }
     &-design {
-        height: 50px;
+        height: rem(50);
         background-position: -150px 0;
     }
     &-code {
-        height: 50px;
+        height: rem(50);
         background-position: -200px 0;
     }
     &-integration {
-        height: 50px;
+        height: rem(50);
         background-position: -250px 0;
     }
     &-end {
         background-position: -300px 0;
-        top: 50px;
+        top: rem(50);
         bottom: 0;
         &-top {
             top: 0;
@@ -72,35 +72,35 @@
 
     &-space-dark {
         background-position: 0 0;
-        top: 50px;
+        top: rem(50);
         bottom: 0;
         &-top {
             top: 0;
         }
     }
     &-research-dark {
-        height: 50px;
+        height: rem(50);
         background-position: -350px 0;
     }
     &-architecture-dark {
-        height: 50px;
+        height: rem(50);
         background-position: -400px 0;
     }
     &-design-dark {
-        height: 50px;
+        height: rem(50);
         background-position: -450px 0;
     }
     &-code-dark {
-        height: 50px;
+        height: rem(50);
         background-position: -500px 0;
     }
     &-integration -dark{
-        height: 50px;
+        height: rem(50);
         background-position: -550px 0;
     }
     &-end-dark {
         background-position: -600px 0;
-        top: 50px;
+        top: rem(50);
         bottom: 0;
         &-top {
             top: 0;
@@ -111,5 +111,5 @@
 
 .spacer {
     position: relative;
-    height: 140px;
+    height: rem(140);
 }

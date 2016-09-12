@@ -13,38 +13,38 @@
         right: 0;
         left: 0;
         z-index: 6;
-        height: 50px;
+        height: rem(50);
         background: #000;
         .project-logo {
             position: absolute;
-            top: 8px;
-            left: 40px;
-            width: 75px;
+            top: rem(8);
+            left: rem(40);
+            width: rem(75);
         }
         .project-close {
             position: absolute;
             top: -3px;
-            right: 40px;
-            font-size: 5.0em;
+            right: rem(40);
+            font-size: rem(50);
         }
         h1 {
             color: $light;
-            font-size: 3.0em;
-            line-height: 50px;
-            padding: 0 100px;
+            font-size: rem(3.0);
+            line-height: rem(50);
+            padding: rem(0 100);
             text-align: center;
         }
 
         .scroll-progress {
             position: absolute;
-            top: 50px;
+            top: rem(50);
             right: 0;
             left: 0;
-            height: 5px;
+            height: rem(5);
             background-color: rgba($dark, 0.5);
             .js-scroll-bar {
                 background-color: $orange;
-                height: 5px;
+                height: rem(5);
                 display: block;
                 width: 0;
                 transition: all 0.2s
@@ -63,12 +63,12 @@
         h2 {
             display: table-cell;
             vertical-align: middle;
-            font-size: 6.0em;
+            font-size: rem(60);
             width: 100%;
             span {
                 background: rgba(0,0,0,0.3);
                 color: $light;
-                padding: 10px 20px;
+                padding: rem(10 20);
             }
         }
     }
@@ -80,11 +80,11 @@
     .project-basic {
         width: 30%;
         float: left;
-        padding: 60px;
+        padding: rem(60);
         background-color: $light;
         &.js-stick-on {
             position: fixed;
-            top: 50px;
+            top: rem(50);
             bottom: 0;
         }
         ul {
@@ -92,17 +92,17 @@
         }
         li {
             text-align: right;
-            padding-bottom: 40px;
+            padding-bottom: rem(40);
             span {
-                font-size: 1.8em;
+                font-size: rem(18);
                 text-transform: uppercase;
                 font-weight: 400;
-                margin-bottom: 10px;
+                margin-bottom: rem(10);
                 display: block;
                 color: $lightBlue;
             }
             p {
-                font-size: 3.6em;
+                font-size: rem(36);
                 color: $dark;
             }
         }
@@ -113,25 +113,25 @@
         position: relative;
         header {
             position: relative;
-            min-height: 150px;
+            min-height: rem(150);
             h3 {
-                font-size: 5.0em;
-                line-height: 1.2em;
+                font-size: rem(50);
+                line-height: 1.2;
             }
         }
         p {
-            font-size: 1.8em;
+            font-size: rem(18);
             line-height: 1.6;
         }
     }
     .project-main-block {
         position: relative;
-        padding-bottom: 100px;
+        padding-bottom: rem(100);
     }
     .project-main-container {
-        padding: 0 80px;
+        padding: rem(0 80);
         .sprite {
-            margin-left: -80px;
+            margin-left: rem(-80);
         }
     }
     .spacer-end {

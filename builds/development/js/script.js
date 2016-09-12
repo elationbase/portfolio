@@ -9346,10 +9346,11 @@ particlesJS('js-lines', {
 // remap jQuery to $
 (function($){
 	'use strict'
-    var scroll = $(window).scrollTop();
-    var middle = $(window).height() / 2;
-    var outClass = 'out';
-    var $steps = $('.strategy li');
+    var scroll = $(window).scrollTop(),
+		middle = $(window).height() / 2,
+		outClass = 'out',
+		$steps = $('.strategy li, .section__parallax');
+
     $steps.addClass(outClass);
 
     var strategy = function() {

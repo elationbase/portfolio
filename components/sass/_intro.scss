@@ -1,47 +1,47 @@
 // _intro.scss
 // ==============
 
-.intro {
+.section__intro {
     background-color: $light;
     text-align: center;
     h1 {
-        margin: 100px 0 40px 0;
-        font-size: 8.0em;
+        margin: rem(100 0 40 0);
+        font-size: rem(80);
         color: $midgrey;
         border-bottom: 3px solid $orange;
         display: inline-block;
     }
     p {
-        font-size:1.8em;
+        font-size: rem(18);
         line-height: 1.6;
-        max-width: 800px;
+        max-width: rem(800);
         margin: auto;
     }
     ul {
-        max-width: 1000px;
-        margin: 80px auto;
+        max-width: rem(1000);
+        margin: rem(80 auto);
         > li {
-                @include j-span(1/4);
-                padding: 0 20px;
-                h2 {
-                    font-size: 3.0em;
-                    color: $midgrey;
-                    border-bottom: 3px solid $lightBlue;
-                    display: inline-block;
-                    padding-bottom: 10px;
-                }
-                .icon {
-                    font-family: eb-mkt;
-                    font-size: 6.0em;
-                    color: $midgrey;
-                    display: block;
-                    padding: 30px;
+            @include j-span(1/4);
+            padding: rem(0 20);
+            h2 {
+                font-size: rem(30);
+                color: $midgrey;
+                border-bottom: 3px solid $lightBlue;
+                display: inline-block;
+                padding-bottom: rem(10);
+            }
+            .icon {
+                font-family: eb-mkt;
+                font-size: rem(60);
+                color: $midgrey;
+                display: block;
+                padding: rem(30);
             }
         }
     }
     ol {
-    font-size: 1.8em;
+    font-size: rem(18);
     line-height: 1.6;
-    margin-top: 20px;
+    margin-top: rem(20);
     }
 }

@@ -10,10 +10,10 @@
         position: absolute;
         bottom: 0;
         left: 20%;
-        margin-bottom: 100px;
+        margin-bottom: rem(100);
     }
 }
-.strategy {
+.section__strategy {
     article {
         margin-left: 20%;
         position: relative;
@@ -25,36 +25,36 @@
 
     .spacer {
         position: relative;
-        height: 140px;
+        height: rem(140);
         background: url(../img/line.png) repeat-y;
     }
 
     .line {
         position: absolute;
-        top: 50px;
+        top: rem(50);
         bottom: 0;
         left: 0;
-        width: 50px;
+        width: rem(50);
         background: url(../img/line.png) repeat-y;
     }
 
     ul {
-        max-width: 800px;
+        max-width: rem(800);
         li {
             position: relative;
             &:last-child {
-                padding-bottom: 140px;
+                padding-bottom: rem(140);
             }
             h3 {
-                font-size: 2.6em;
+                font-size: rem(26);
                 color: $lightBlue;
-                padding: 10px 0 20px 80px;
+                padding: rem(10 0 20 80);
                 transition: all 0.5s ease-out;
             }
             p {
-                font-size: 2.0em;
+                font-size: rem(20);
                 color: $dark;
-                padding: 0 0 80px 80px;
+                padding: rem(0 0 80 80);
                 transition: all 0.5s ease-out;
             }
             &.out {

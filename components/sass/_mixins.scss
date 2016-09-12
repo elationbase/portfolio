@@ -27,3 +27,19 @@
   }
 
 }
+
+// Functions
+@function rem($values) {
+  $rem: ();
+  @each $value in $values { /* 4 */
+
+    @if $value == 0 or $value == auto {
+      $rem: append($rem, $value);
+    }
+    @else {
+      $val: $value / ($value * 0 + 1);
+      $rem: append($rem, ($val / 16 + rem));
+    }
+  }
+  @return #{$rem};
+}
