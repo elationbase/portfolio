@@ -106,7 +106,7 @@ gulp.task('connect', function() {
 // Gulp watch
 gulp.task('watch', function () {
 	gulp.watch(jsFiles, ['js']);
-	gulp.watch('components/sass/*.scss', ['sass']);
+	gulp.watch('components/sass/**/*.*', ['sass']);
 	gulp.watch(htmlFiles, ['html']);
 	gulp.watch(viewFiles, ['views']);
 	gulp.watch(imgFiles, ['img']);

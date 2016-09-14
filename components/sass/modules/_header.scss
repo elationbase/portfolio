@@ -1,28 +1,36 @@
 .main__header {
     position: fixed;
-    top: 0px;
+    top: -50px;
     right: 0;
     left: 0;
     z-index: 4;
     background-color: $dark;
-    height: 50px;
+    height: rem(50);
+    transition: top 1s ease-out;
     &--visible {
         top: 0;
     }
-    img {
-        position: absolute;
-        padding: 5px;
-        height: 50px;
+    &__left {
+        float: left;
+        width: 50%;
+    }
+    &__logo {
+        padding: rem(5);
+        height: rem(50);
+        float: left;
+        svg {
+            height: rem(40);
+            float: left;
+        }
     }
     h1, h2 {
         display: block;
-        text-align: right;
         font-family: $bodyFont;
     }
     h1 {
       font-size: rem(22);
       color: $lightBlue;
-      padding-top: 5px;
+      padding: rem(5 0 0 5);
     }
     h2 {
         font-size: rem(15);

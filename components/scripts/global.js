@@ -85,6 +85,14 @@
 		$('.js-scroll-bar').css('width', scrollPercent + '%');
 	}
 
+	var stickHeader = function() {
+	if ( winTop > winH ) {
+		$('.main__header').addClass('main__header--visible');
+	} else {
+		$('.main__header').removeClass('main__header--visible');
+	}
+	}
+
 
 
 
@@ -92,11 +100,13 @@
 		portfolioHover();
 		scrollBar();
 		addStick();
+		stickHeader();
 	}
 
 	var scroll = function() {
 		addStick();
 		scrollBar();
+		stickHeader();
 	}
 
 	var resizeVars = function() {
