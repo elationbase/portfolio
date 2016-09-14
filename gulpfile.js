@@ -1,28 +1,28 @@
 'use strict';
 
 var gulp = require('gulp'),
-		sass = require('gulp-sass'),
-		autoprefixer = require('gulp-autoprefixer'),
-		sourcemaps = require('gulp-sourcemaps'),
-		concat = require('gulp-concat'),
-		uglify = require('gulp-uglify'),
-		htmlmin = require('gulp-htmlmin'),
-		gulpif = require('gulp-if'),
-		connect = require('gulp-connect');
+	sass = require('gulp-sass'),
+	autoprefixer = require('gulp-autoprefixer'),
+	sourcemaps = require('gulp-sourcemaps'),
+	concat = require('gulp-concat'),
+	uglify = require('gulp-uglify'),
+	htmlmin = require('gulp-htmlmin'),
+	gulpif = require('gulp-if'),
+	connect = require('gulp-connect');
 
 // File Location vars
 var htmlFiles = ['builds/development/*.html'],
-		jsFiles   = [
-			'components/scripts/libs/jquery-2.1.4.js',
-			'components/scripts/particles.js',
-			'components/scripts/modules/*.js',
-			'components/scripts/global.js'
-		],
-		sassFiles  = ['components/sass/style.scss'],
-		theneFiles = ['components/sass/themes/*.scss'],
-		htmlFiles  = ['builds/development/*.html'],
-		viewFiles  = ['builds/development/views/*.html'],
-		imgFiles   = ['builds/development/img/**/*.*'];
+	jsFiles   = [
+		'components/scripts/libs/jquery-2.1.4.js',
+		'components/scripts/particles.js',
+		'components/scripts/modules/*.js',
+		'components/scripts/global.js'
+	],
+	sassFiles  = ['components/sass/style.scss'],
+	theneFiles = ['components/sass/themes/*.scss'],
+	htmlFiles  = ['builds/development/*.html'],
+	viewFiles  = ['builds/development/views/*.html'],
+	imgFiles   = ['builds/development/img/**/*.*'];
 
 
 // Check for environment and set deault to dev
@@ -106,7 +106,7 @@ gulp.task('connect', function() {
 // Gulp watch
 gulp.task('watch', function () {
 	gulp.watch(jsFiles, ['js']);
-	gulp.watch('components/sass/*.scss', ['sass']);
+	gulp.watch('components/sass/**/*.*', ['sass']);
 	gulp.watch(htmlFiles, ['html']);
 	gulp.watch(viewFiles, ['views']);
 	gulp.watch(imgFiles, ['img']);

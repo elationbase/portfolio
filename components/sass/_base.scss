@@ -1,12 +1,16 @@
 // _base.scss
 // ==============
+html {
+    font-size: 16px;
+}
+
 body {
   font-family: $bodyFont;
   font-weight: 100;
-  font-size: 10px;
+  font-size: rem(16);
   background: $light;
   color: $dark;
-  min-width: 400px;
+  min-width: rem(400);
 }
 h1, h2, h3, h4, h5, h6 {
   //font-weight: 100;
@@ -30,93 +34,36 @@ a {
   }
 }
 
-.container {
-  @include j-cf();
-  width: 100%;
-  margin: 0 auto;
-  position: relative;
-  @include media(mobile) {
-    padding: 0 20px;
-  };
-  @include media(tablet) {
-    padding: 0 40px;
-  };
-  @include media(laptop) {
-    padding: 0 70px;
-  };
-  @include media(desktop) {
-    padding: 0 100px;
-  };
-
+.section {
+    position: relative;
+    width: 100%;
+    &--full {
+        min-height: 100vh;
+    }
+    &--half {
+        height: 50vh;
+    }
+    &--container {
+      @include j-cf();
+      margin: 0 auto;
+      position: relative;
+      @include media(mobile) {
+        padding: rem(0 20);
+      };
+      @include media(tablet) {
+        padding: rem(0 40);
+      };
+      @include media(laptop) {
+        padding: rem(0 70);
+      };
+      @include media(desktop) {
+        padding: rem(0 100);
+      };
+    }
 }
 
-.page-section {
-  min-height: 100vh;
-  position: relative;
-  font-size: 10px;
-}
-.hero {
-  @include backImage('../img/bg-hero-2.jpg');
-  header {
-    position: absolute;
-    left: 80px;
-    bottom: 80px;
-    z-index: 2;
-    user-select: none;
-    font-weight: 800;
-    letter-spacing: -4px;
-    h1 {
-      font-size: 6.0em;
-      color: $lightBlue;
-    }
-    h2 {
-      font-size: 5.0em;
-      span {
-        color: $orange;
-      }
-    }
-    h3 {
-      font-size: 5.0em;
-    }
-  }
-}
-#js-lines {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 1;
-  background: rgba(33, 134, 165, 0.2);
-  background: radial-gradient(ellipse at center, rgba(255,255,255,0) 50%,$dark 100%);
-}
-
-.page-half {
-    height: 50vh;
-    @include backImage('../img/demo_screens.jpg');
-}
-
-.parallax {
-    height: 100vh;
-    overflow-x: hidden;
-    overflow-y: auto;
-    perspective: 1px;
-    -webkit-perspective: 1px;
-        .parallax_layer {
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-    }
-    .parallax_layer_back {
-        transform: translateZ(-1px) scale(2);
-        img {
-            min-width: 100%;
-            //min-height: 100%;
-        }
-    }
-    .parallax_layer_base {
-        transform: translateZ(0);
-    }
+.ico {
+    height: rem(50);
+    width: rem(50);
+    display: inline-block;
 }

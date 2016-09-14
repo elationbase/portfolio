@@ -20,26 +20,22 @@
 		switch(dir) {
 			case 0:
 				$ele.find(info).addClass('hover-top');
-				console.log('top');
 				break;
 			case 1:
 				$ele.find(info).addClass('hover-right');
-				console.log('right');
 				break;
 			case 2:
 				$ele.find(info).addClass('hover-bottom');
-				console.log('bottom');
 				break;
 			case 3:
 				$ele.find(info).addClass('hover-left');
-				console.log('left');
 				break;
 			default:
 				break;
 		}
 	}
 
-	var prortfolioHover = function () {
+	var portfolioHover = function () {
 		$('.col a').on('mouseenter', function(event) {
 			$this = $(this);
 			dir = getHoverDir( $this, event.pageX, event.pageY );
@@ -61,44 +57,71 @@
 	/*
 		Stick elements
 	*/
-	var winTop = $(window).scrollTop();
-	var stickClass = 'js-stick-on';
-	var offset, pos;
+	var
+	winTop = $(window).scrollTop(),
+	stickClass = 'js-stick-on',
+	$stick = $('.js-stick-ele'),
+	offset = $stick.data('offset'),
+	offsetTop = $stick.offset().top;
 
-	var addStick = function(offset) {
-
-		winTop = $(window).scrollTop();
-
-		$('.js-stick-ele').each(function() {
-
-			offset = $(this).data('offset');
-			pos = $(this).position().top - winTop;
-
-			if (pos < offset) {
-				if (!$(this).hasClass(stickClass)) {
-					$(this).addClass(stickClass);
-				}
-			} else {
-				if ($(this).hasClass(stickClass)) {
-					$(this).removeClass(stickClass);
-				}
+	var addStick = function() {
+		winTop = $(window).scrollTop()
+		if (offsetTop - offset > winTop) {
+			if ($stick.hasClass(stickClass)) {
+				$stick.removeClass(stickClass);
 			}
-		});
+		} else {
+			if (!$stick.hasClass(stickClass)) {
+				$stick.addClass(stickClass);
+			}
+		}
 	};
 
-	var init = function() {
-		prortfolioHover();
+	var scrollPercent,
+		projectH = $('.project-pages').height(),
+		winH = $(window).height();
+	var scrollBar = function () {
+		scrollPercent = Math.floor( ( $(window).scrollTop() / (projectH - winH) ) * 100 );
+		$('.js-scroll-bar').css('width', scrollPercent + '%');
 	}
+
+	var stickHeader = function() {
+	if ( winTop > winH ) {
+		$('.main__header').addClass('main__header--visible');
+	} else {
+		$('.main__header').removeClass('main__header--visible');
+	}
+	}
+
+
+
+
+	var init = function() {
+		portfolioHover();
+		scrollBar();
+		addStick();
+		stickHeader();
+	}
+
+	var scroll = function() {
+		addStick();
+		scrollBar();
+		stickHeader();
+	}
+
+	var resizeVars = function() {
+		winTop = $(window).scrollTop(),
+		projectH = $('.project-pages').height(),
+		winH = $(window).height(),
+		offsetTop = $stick.offset().top;
+	}
+
 
 
 	/* trigger when page is ready */
 	$(document).ready(init);
-	$(window).on('scroll', addStick);
-
-	$(window).on('scroll', function () {
-		//$('.hero').addClass('pt-page-scaleDown');
-		//$('.intro').addClass('pt-page-moveFromBottom');
-	});
+	$(window).on('scroll', scroll);
+	$(window).on('resize', resizeVars);
 
 	/* optional triggers
 

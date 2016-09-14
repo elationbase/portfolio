@@ -1,7 +1,7 @@
 // _portfolio.scss
 // ==============
 
-.portfolio {
+.section__portfolio {
     background-color: $light;
     @include j-cf();
     .w66 {
@@ -13,13 +13,13 @@
     //max-width: 1300px;
     header {
         h2 {
-          font-size: 10.0em;
+          font-size: rem(10);
           height: 50%;
           margin-left: 50%;
         }
     }
     .col {
-        padding: 0 5px;
+        padding: 0 5;
         a {
             display: block;
             //margin: 10px;
@@ -33,7 +33,7 @@
             }
             h3 {
 
-                font-size: 6.0em;
+                font-size: rem(60);
             }
             &:hover {
                 .info-container {
@@ -90,18 +90,18 @@
           height: 100%;
           text-align: center;
           vertical-align: middle;
-          padding: 20px;
+          padding: rem(20);
         }
         h3 {
-            font-size: 2.4em;
-            margin-bottom: 10px;
-            margin-top: 100px;
+            font-size: rem(24);
+            margin-bottom: rem(10);
+            margin-top: rem(100);
             opacity: 0;
             transition: all 1.0s ease-out;
         }
         p {
-            font-size: 1.4em;
-            margin-top: 200px;
+            font-size: rem(14);
+            margin-top: rem(200);
             opacity: 0;
             transition: all 1.0s ease-out;
         }

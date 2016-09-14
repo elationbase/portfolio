@@ -1,0 +1,27 @@
+
+.social-media{
+    float: right;
+    li {
+        display: block;
+        float: left;
+        a {
+            display: block;
+            width: rem(40);
+            height: rem(40);
+            padding: 5px;
+            svg {
+                max-width: 100%;
+                width: rem(40);
+                height: rem(40);
+                fill: $lightBlue;
+                transition: all 0.4s ease-out;
+            }
+            &:hover {
+                svg {
+                    transform: scale(1.1);
+                    fill: $orange
+                }
+            }
+        }
+    }
+}

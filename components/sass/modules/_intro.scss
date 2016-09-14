@@ -1,0 +1,47 @@
+// _intro.scss
+// ==============
+
+.section__intro {
+    background-color: $light;
+    text-align: center;
+    h1 {
+        margin: rem(100 0 40 0);
+        font-size: rem(80);
+        color: $midgrey;
+        border-bottom: 3px solid $orange;
+        display: inline-block;
+    }
+    p {
+        font-size: rem(18);
+        line-height: 1.6;
+        max-width: rem(800);
+        margin: auto;
+    }
+    ul {
+        max-width: rem(1000);
+        margin: rem(80 auto);
+        > li {
+            @include j-span(1/4);
+            padding: rem(0 20);
+            h2 {
+                font-size: rem(30);
+                color: $midgrey;
+                border-bottom: 3px solid $lightBlue;
+                display: inline-block;
+                padding-bottom: rem(10);
+            }
+            .icon {
+                font-family: eb-mkt;
+                font-size: rem(60);
+                color: $midgrey;
+                display: block;
+                padding: rem(30);
+            }
+        }
+    }
+    ol {
+    font-size: rem(18);
+    line-height: 1.6;
+    margin-top: rem(20);
+    }
+}

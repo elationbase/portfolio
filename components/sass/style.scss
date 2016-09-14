@@ -13,17 +13,22 @@
 
 //Core partials
 @import "base";
-@import "modules";
-@import "header";
-@import "nav";
-@import "footer";
 
-// Views partials
-@import "hero";
-@import "intro";
-@import "strategy";
-@import "portfolio";
-@import "experience";
-
+// Components partials
+@import "components/stemScroll";
+@import "components/plus";
+@import "components/parallax";
+@import "components/social-media";
 
 // Modules partials
+@import "modules/header";
+@import "modules/nav";
+@import "modules/footer";
+
+// Views partials
+@import "modules/hero";
+@import "modules/intro";
+@import "modules/strategy";
+@import "modules/portfolio";
+@import "modules/experience";
+@import "modules/projects";

@@ -1,0 +1,67 @@
+// _strategy.scss
+// ==============
+.promo1 {
+    @include backImage('../img/bg-hero-1.jpg');
+    min-height: 50vh;
+    position: relative;
+    h2 {
+        font-size: 7.0em;
+        color: $lightBlue;
+        position: absolute;
+        bottom: 0;
+        left: 20%;
+        margin-bottom: rem(100);
+    }
+}
+.section__strategy {
+    article {
+        margin-left: 20%;
+        position: relative;
+    }
+    .ico {
+        fill: $light;
+        position: absolute;
+    }
+
+    .spacer {
+        position: relative;
+        height: rem(140);
+        background: url(../img/line.png) repeat-y;
+    }
+
+    .line {
+        position: absolute;
+        top: rem(50);
+        bottom: 0;
+        left: 0;
+        width: rem(50);
+        background: url(../img/line.png) repeat-y;
+    }
+
+    ul {
+        max-width: rem(800);
+        li {
+            position: relative;
+            &:last-child {
+                padding-bottom: rem(140);
+            }
+            h3 {
+                font-size: rem(26);
+                color: $lightBlue;
+                padding: rem(10 0 20 80);
+                transition: all 0.5s ease-out;
+            }
+            p {
+                font-size: rem(20);
+                color: $dark;
+                padding: rem(0 0 80 80);
+                transition: all 0.5s ease-out;
+            }
+            &.out {
+                h3, p {
+                    color: $lightgrey;
+                }
+            }
+        }
+    }
+}

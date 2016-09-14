@@ -1,0 +1,60 @@
+// _hero.scss
+// ==============
+
+.section__hero {
+  @include backImage('../img/bg-hero-2.jpg');
+  user-select: none;
+  .logo {
+      max-width: rem(200);
+      position: absolute;
+      top: rem(80);
+      left: 50%;
+      margin-left: rem(-100);
+      z-index: 1;
+  }
+  header {
+    position: absolute;
+    left: 50%;
+    bottom: rem(80);
+    margin-left: rem(-160);
+    z-index: 2;
+    font-weight: 100;
+    text-align: center;
+    h1 {
+      font-size: rem(80);
+      color: $lightBlue;
+    }
+    h2 {
+        font-size: rem(30);
+        font-family: $bodyFont;
+        color: $light;
+        line-height: 1.3;
+        //letter-spacing: -3px;
+        .plus {
+            width: rem(30);
+            height: rem(30);
+            vertical-align: -4px;
+            &:after {
+                width: rem(30);
+                height: rem(30);
+            }
+        }
+    }
+    h3 {
+        font-size: rem(25);
+        font-family: $bodyFont;
+        color: $orange;
+        //letter-spacing: -3px;
+    }
+  }
+}
+#js-lines {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 3;
+    background: rgba(33, 134, 165, 0.2);
+    background: radial-gradient(ellipse at center, rgba(255,255,255,0.2) 50%,$dark 100%);
+}

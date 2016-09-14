@@ -8,6 +8,10 @@
   },
   "author": "Alvaro Montero",
   "dependencies": {
+    "jquery": "^3.1.0"
+  },
+  "devDependencies": {
+    "express": "^4.14.0",
     "gulp": "^3.9.1 ",
     "gulp-sass": "^2.3.1",
     "gulp-autoprefixer": "^3.1.0",
